@@ -1,0 +1,48 @@
+<h3>Add Recipes</h3>
+
+<form [formGroup]="form" (ngSubmit)="processForm()">
+  <table>
+
+    <tr>
+      <td>Title:</td>
+      <td>
+        <input type="text" size="30" formControlName="title">
+      </td>
+    </tr>
+
+    <tr>
+      <td>Ingredients:</td>
+      <h4 *ngIf="ingredientsArray.controls.length <= 0"> Add at least 1 ingredients</h4>
+      <button (click)="addIngredientItem()">+</button>
+      <table>
+        <tbody formArrayName="ingredientsArray">
+          <tr *ngFor="let ing of ingredientsArray.controls; let i = index" >
+            <td><input type="text" formControlName="ingredient" ></td>
+          </tr>
+        </tbody>
+      </table>
+    </tr>
+
+    <tr>
+      <td>Instruction:</td>
+      <td>
+        <textarea type="text" formControlName="instruction"></textarea>
+      </td>
+    </tr>
+
+    <tr>
+      <tr>
+        <td>Image:</td>
+        <td>
+          <input type="text" size="30" formControlName="image">
+        </td>
+      </tr>
+      <tr>
+      <td></td>
+      <td>
+        <button type="submit">Add</button>
+      </td>
+    </tr>
+
+  </table>
+</form>

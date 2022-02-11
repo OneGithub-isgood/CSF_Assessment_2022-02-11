@@ -1,0 +1,17 @@
+<h3>Recipe: {{ recipe?.recipeName }} </h3>
+
+<table>
+  <tr>
+    <img [src]="recipe?.recipeImageURL" alt="" >
+  </tr>
+  <tr>
+    <h4>Ingredients</h4>
+    <h5> {{ recipe?.recipeIngredients }} </h5>
+  </tr>
+  <tr>
+    <h4>Instruction</h4>
+    <label> {{ recipe?.recipeInstruction }} </label>
+  </tr>
+</table>
+
+<button [routerLink]="['/']">Back</button>

@@ -1,0 +1,12 @@
+<h3>Recipes Library</h3>
+
+<table *ngIf="availableRecipes.length > 0">
+  <h4>There are currently {{availableRecipes.length}} recipes available</h4>
+  <div *ngFor="let r of availableRecipes" class="recipe-style" [routerLink]="['/recipe', r.recipeId]" >
+    {{r.recipeName}}
+  </div>
+</table>
+
+<table *ngIf="availableRecipes.length <= 0" >
+  <h4>Recipes are currently not available</h4>
+</table>
